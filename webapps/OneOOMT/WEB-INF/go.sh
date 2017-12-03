@@ -4,7 +4,8 @@ CLASSPATH="$CLASSPATH":./lib/httpclient-4.5.3.jar
 CLASSPATH="$CLASSPATH":./lib/httpcore-4.4.6.jar
 CLASSPATH="$CLASSPATH":./lib/commons-fileupload-1.3.3.jar
 CLASSPATH="$CLASSPATH":./lib/httpmime-4.5.3.jar
+CLASSPATH="$CLASSPATH":./lib/commons-logging-1.2.jar	
 
 echo "CLASSPATH: $CLASSPATH"
 
-javac -d ./classes -cp $CLASSPATH ./src/com/joonho/OneOOMT/*.java *.java
+java -cp $CLASSPATH upload

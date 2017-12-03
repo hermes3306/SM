@@ -46,9 +46,15 @@ public class upload {
 		HttpPost httpPost = new HttpPost(url);
 
 		File payload = new File("/tmp/commons-logging-1.2.jar");	
+
+		ContentType plainAsciiContentType 
+			= ContentType.create("text/plain", Consts.ASCII);
+
 		HttpEntity entity = MultipartEntityBuilder.create()
 			.setMode(HttpMultipartMode.BROWSER_COMPATIBLE)
 			.addPart("file", new FileBody(payload))
+			.addPart("username", new StringBody("bond", plainAsciiContentType))
+			.addPart("password", new StringBody("vesper",plainAsciiContentType))
 			.build();
 		httpPost.setEntity(entity);
 		try{
